@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @method static \Iankibet\SdpAi\Contracts\SdpAiProvider provider(string $name)
  * @method static \Iankibet\SdpAi\Contracts\SdpAiProvider model(string $model)
+ * @method static \Iankibet\SdpAi\Contracts\SdpAiProvider complete(array $messages)
  * @method static string getDefaultDriver()
  */
 
