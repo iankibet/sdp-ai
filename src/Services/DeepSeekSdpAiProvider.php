@@ -43,4 +43,21 @@ class DeepSeekSdpAiProvider implements SdpAiProvider
 
         return $response->json('choices.0.message.content') ?? 'Error generating content';
     }
+
+    public function complete($messages = []): string
+    {
+        $response = Http::withHeaders([
+            'Authorization' => "Bearer {$this->apiKey}",
+            'Content-Type' => 'application/json',
+        ])->post("{$this->baseUrl}/chat/completions", [
+            'model' => $this->model,
+            'stream' => false,
+            'messages' => $messages,
+        ]);
+        if($response->json('choices')){
+            return $response->json('choices.0.message.content');
+        }else{
+            throw new \Exception('Error generating content');
+        }
+    }
 }
