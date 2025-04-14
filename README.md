@@ -17,7 +17,7 @@ A Laravel package for integrating multiple AI providers (ChatGPT, Claude, DeepSe
 ## Installation
 
 ```bash
-composer require your-vendor-name/sdp-ai
+composer require iankibet/sdp-ai
 ```
 
 > Replace `your-vendor-name` with your actual composer namespace.
