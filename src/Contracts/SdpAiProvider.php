@@ -6,6 +6,5 @@ interface SdpAiProvider
 {
     public function setModel(string $model): self;
     public function model(string $model): self;
-    public function generate(string $prompt, $messages = []): string;
-    public function complete($messages = []): string;
+    public function generate(array $messages, string $userMessage = null): string;
 }
